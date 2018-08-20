@@ -16,20 +16,36 @@ const claimReservation = function () {
     x = 0;
     if (lname == lnames){
       if (reservations[i].claimed == false){
-        alert("welcome " + i +"!!!");
-        return;
+        // alert("welcome " + i +"!!!")
+       const welcome = document.createElement("p");
+       welcome.innerHTML = "welcome " + i +"!!!";
+       document.body.appendChild(welcome); 
+       return;
       }
 
       else if (reservations[i].claimed == true) {
-        alert("I'm informing you about the situation!");
-        return;
+        // alert("I'm informing you about the situation!");
+       const inform = document.createElement("p");
+       inform.innerHTML = " Hello " +i+ ", I'm informing you about the situation!";
+       document.body.appendChild(inform); 
+       return;
       }
     }
   }
 
-  alert("I'm sorry, there is no reservation under this name.")
+  // alert("I'm sorry, there is no reservation under this name.")
+  const noReservation = document.createElement("p");
+  noReservation.innerHTML = "I'm sorry, there is no reservation under this name.";
+  document.body.appendChild(noReservation);
+
   reservations.name = { claimed: true}
-  alert("Hello "+ name + ". There is an empty table so we made you a new reservation")
+ 
+  // alert("Hello "+ name + ". There is an empty table so we made you a new reservation")
+  const newReservation = document.createElement("p");
+  newReservation.innerHTML = "Hello "+ name + ". There is an empty table so we made you a new reservation";
+  document.body.appendChild(newReservation);
+  
+  
 
 }
 
